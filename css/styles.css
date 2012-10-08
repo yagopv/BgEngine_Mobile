@@ -1,0 +1,57 @@
+﻿/* Solve loadmore button position */
+.loadmore { top:11px; }
+
+/* Solve filter button position */
+.filter-list-margin { margin-top:7%; }
+.search-contents-margin { margin-top:1%; }
+
+/* Solve search button position */
+.ui-input-search { top:3px !important; }
+
+/* Remove ellipsis in home and postsby views to show all titles and description */
+.remove-ellipsis { text-overflow: ellipsis; overflow: visible; white-space: normal; }
+
+pre {
+    background-color: #121212 !important;
+    border: 2px solid #7C7070;
+    color: #C9CEB5;
+    font-family: Consolas,Monaco,"Courier New",mono-space,monospace !important;
+    font-size: 0.9em;
+    margin-bottom: 1.5em !important;
+    opacity: 0.9;
+    overflow-x: auto;
+    padding: 2%;
+	border-radius: 0.5em 0.5em 0.5em 0.5em;
+}
+
+/* Post links styles*/
+#post [data-role="content"]  a { color: #0088CC; text-decoration:none; }
+#post [data-role="content"]  a:hover { color: #005580; text-decoration: underline; outline:0 none;}
+
+/* Fix flickering in transitions. Add this class to content, header and footer and take out data-position="fixed"*/
+/*
+.header {position:fixed;z-index:10;top:0;width:100%}
+.content {padding:45px 15px}
+.footer {position:fixed;z-index:10;bottom:0;width:100%}
+*/
+
+.ui-toast {
+    color: #FFFFFF;
+    background-color: #555;
+    padding: 10px;
+    font-size: 10pt;
+    font-weight: normal;
+    border: 1px solid #666;
+    font-family:Helvetica, Arial, Sans-Serif;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    border-radius: 6px;
+    position: fixed;
+    z-index: 5000;
+}
+
+.overflow-x-allowed { overflow-x : scroll; }
+
+.center-image { margin:0 auto; width:50%;}
+	.center-image img { width:100%; }
+	

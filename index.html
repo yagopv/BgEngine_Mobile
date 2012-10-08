@@ -1,0 +1,76 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>		
+		<title></title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link href="css/jquery.mobile.theme.css" rel="stylesheet" type="text/css" />		
+		<link href="css/jquery.mobile.structure.css" rel="stylesheet" type="text/css" />		
+		<link href="css/styles.css" rel="stylesheet" type="text/css" />		
+		<link rel="stylesheet" href="css/jqm-icon-pack-2.1.2-fa.css" />
+		<script type="text/javascript" src="js/jquery.js"></script>
+		<script type="text/javascript" src="js/knockout-2.1.js"></script>
+		<script type="text/javascript" src="js/mapper.js"></script>		
+		<script type="text/javascript" src="js/url.parser.js"></script>
+		<script type="text/javascript" src="js/globalize.js"></script>
+		<script type="text/javascript" src="js/cultures/globalize.culture.es.js"></script>
+		<script type="text/javascript" src="js/binding-handlers.js"></script>
+		<script type="text/javascript" src="js/homeViewModel.js"></script>
+		<script type="text/javascript" src="js/postViewModel.js"></script>
+		<script type="text/javascript" src="js/postsbyViewModel.js"></script>        
+		<script type="text/javascript" src="js/categoriesViewModel.js"></script>        
+		<script type="text/javascript" src="js/tagsViewModel.js"></script>        
+		<script type="text/javascript" src="js/searchViewModel.js"></script>        						
+		<script type="text/javascript">
+		    $(document).bind("mobileinit", function () {
+		        $.mobile.defaultPageTransition = "none";
+		        $.mobile.listview.prototype.options.filterPlaceholder = Globalize.localize("global_filteritems", navigator.language.substr(0, 2));		        
+		    });		
+		</script>		
+		<script type="text/javascript" src="js/jquery.mobile.js"></script>	
+        <script src="phonegap.js"></script>
+		<script type="text/javascript" src="js/bgm.app.js"></script>	
+        <script type="text/javascript" src="js/bgm.init.js"></script>	
+        <script type="text/javascript" src="js/bgm.toast.js"></script>
+    </head>
+	<body>
+		<div id="home" data-role="page">
+			<div data-role="header" data-theme="a" data-position="fixed">
+				<h1 data-bind="text : messages.global_sitename"></h1>		
+			</div>
+			<div data-role="content" data-theme="c" data-bind="visible : contentvisible" >
+				<div data-role="collapsible-set" data-theme="b" data-content-theme="d">
+					<div data-role="collapsible" data-collapsed="false">
+						<h2 data-bind="jqmtext : messages.home_latest_posts"></h2>
+						<ul data-role="listview" data-bind="foreach:homeposts" data-filter="true">
+							<li>																	
+								<a data-bind="attr : { href : 'views/post.html?postid='+ postid }" >									
+									<h5 class="remove-ellipsis" data-bind="text:title"></h5>
+									<p class="remove-ellipsis" data-bind="text:description"></p>				
+									<p class="ui-li-aside"><strong data-bind="text:date"></strong></p>
+									<span class="ui-li-count" data-bind="text:commentscount"></span>
+								</a>				
+							</li>															
+						</ul>	
+						<a href="#" class="loadmore" data-role="button" data-theme="b" data-bind="event : { tap:loadmore }, jqmtext : messages.global_loadmore"></a>						
+					</div>
+				</div>									
+				<ul data-role="listview" data-inset="true">
+					<li data-bind="text:messages.home_menu" data-role="divider" data-theme="a"></li>					
+					<li><a data-bind="text:messages.global_categories, attr : { href : 'views/categories.html' }"></a></li>
+					<li><a data-bind="text:messages.global_tags, attr : { href : 'views/tags.html' } "></a></li>					
+				</ul>				
+			</div>
+			<div data-role="footer" data-theme="a" data-position="fixed">
+				<div data-role="navbar">
+					<ul>
+						<li><a data-bind="jqmtext:messages.global_home" href="index.html" data-icon="home"></a></li>
+						<li><a data-bind="jqmtext:messages.global_categories, attr : { href : 'views/categories.html' }" data-role="button"  data-icon="book"></a></li>							   
+						<li><a data-bind="jqmtext:messages.global_tags, attr : { href : 'views/tags.html' } " data-role="button"  data-icon="tags"></a></li>
+						<li><a data-bind="jqmtext:messages.global_search, attr : { href : 'views/search.html' } " data-role="button"  data-icon="fasearch"></a></li>
+					</ul>
+				</div>				
+			</div>
+		</div>		
+	<script type="text/javascript" src="http://debug.phonegap.com/target/target-script-min.js#cd03f53a-d267-11e1-843c-1231391c98a7"></script></body>
+
+</html>
