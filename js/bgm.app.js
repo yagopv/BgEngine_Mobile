@@ -2,6 +2,6 @@
     var self = this;
 	
 	self.config = {
-		api_url : "http://localhost/"
+		api_url : "http://yagoperez.com/"
 	}	
 }
