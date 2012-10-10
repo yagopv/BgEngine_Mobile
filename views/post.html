@@ -43,7 +43,13 @@
 				<div class="center-image">
 					<img data-bind="attr : { src : thumbnailpath, alt : category }" />
 				</div>				
-                <div data-bind="html:text"></div>
+                <div data-bind="html:text"></div>				
+				<div data-bind="foreach : $root.postcomments">
+					<div data-role="collapsible" data-collapsed="false" data-theme="e" data-content-theme="c">
+						<h3 data-bind="text : user"></h3>
+						<p data-bind="html: message"></p>
+					</div>
+				</div>															
 				<ul data-role="listview" data-inset="true">
 					<li data-bind="text:$root.messages.home_menu" data-role="divider" data-theme="a"></li>					
 					<li><a data-bind="text: $root.messages.global_categories, attr : { href : '../views/categories.html' }"></a></li>
