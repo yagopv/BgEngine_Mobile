@@ -3,7 +3,7 @@
 
 /* Solve filter button position */
 .filter-list-margin { margin-top:7%; }
-.search-contents-margin { margin-top:1%; }
+.search-contents-margin { margin-top:3%; }
 
 /* Solve search button position */
 .ui-input-search { top:3px !important; }
@@ -14,9 +14,9 @@
 pre {
     background-color: #121212 !important;
     border: 2px solid #7C7070;
-    color: #C9CEB5;
-    font-family: Consolas,Monaco,"Courier New",mono-space,monospace !important;
-    font-size: 0.9em;
+    color: #FFFFFF;
+    font-family: Verdana, Arial, Segoe UI;
+    font-size: 0.8em;
     margin-bottom: 1.5em !important;
     opacity: 0.9;
     overflow-x: auto;
