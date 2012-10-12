@@ -22,7 +22,7 @@
 		<script type="text/javascript" src="../js/searchViewModel.js"></script>        						
 		<script type="text/javascript">
 		    $(document).bind("mobileinit", function () {
-		        $.mobile.defaultPageTransition = "none";
+		        $.mobile.defaultPageTransition = "slide";				
 		        $.mobile.listview.prototype.options.filterPlaceholder = Globalize.localize("global_filteritems", navigator.language.substr(0, 2));		        
 		    });		
 		</script>		
@@ -42,14 +42,20 @@
 				<p data-bind="text:description"></p>	
 				<div class="center-image">
 					<img data-bind="attr : { src : thumbnailpath, alt : category }" />
-				</div>				
+				</div>							
                 <div data-bind="html:text"></div>				
-				<div data-bind="foreach : $root.postcomments">
-					<div data-role="collapsible" data-collapsed="false" data-theme="e" data-content-theme="c">
-						<h3 data-bind="text : user"></h3>
-						<p data-bind="html: message"></p>
+				<div data-bind="foreach: $root.postcomments"> 
+					<div class="ui-content ui-bar-a ui-corner-all" >
+						<h3><span data-bind="text: user"></span></h3>
+						<p data-bind="html: message" />
+						<div data-bind="foreach: relatedcomments">
+							<div class="ui-content ui-bar-c ui-corner-all comments-margin" >
+								<h4><span data-bind="text: user"></span></h4>
+								<p data-bind="html: message" />
+							</div>						
+						</div>
 					</div>
-				</div>															
+				</div>
 				<ul data-role="listview" data-inset="true">
 					<li data-bind="text:$root.messages.home_menu" data-role="divider" data-theme="a"></li>					
 					<li><a data-bind="text: $root.messages.global_categories, attr : { href : '../views/categories.html' }"></a></li>
@@ -59,11 +65,11 @@
 			<div data-role="footer" data-theme="a" data-position="fixed">
 				<div data-role="navbar">
 					<ul data-bind="with:post">
-						<li><a data-bind="jqmtext:$root.messages.global_home" href="../index.html" data-icon="home"></a></li>
-						<li><a data-bind="jqmtext:$root.messages.global_categories, attr : { href : '../views/categories.html' }" data-role="button"  data-icon="book"></a></li>							   
-						<li><a data-bind="jqmtext:$root.messages.global_tags, attr : { href : '../views/tags.html' } " data-role="button"  data-icon="tags"></a></li>							   
-						<li><a data-bind="jqmtext:$root.messages.global_searchformore,  attr : { href : '../views/postsby.html?by=category&id='+ encodeURIComponent(category) }" data-role="button"  data-icon="plus"></a></li>							   
-						<li><a data-bind="jqmtext:$root.messages.global_search, attr : { href : '../views/search.html' } " data-role="button"  data-icon="fasearch"></a></li>						
+						<li><a data-bind="jqmtext:$root.messages.global_home" href="../index.html" data-icon="home" data-transition="slideup"></a></li>
+						<li><a data-bind="jqmtext:$root.messages.global_categories, attr : { href : '../views/categories.html' }" data-role="button"  data-icon="book" data-transition="slideup"></a></li>							   
+						<li><a data-bind="jqmtext:$root.messages.global_tags, attr : { href : '../views/tags.html' } " data-role="button"  data-icon="tags" data-transition="slideup"></a></li>							   
+						<li><a data-bind="jqmtext:$root.messages.global_searchformore,  attr : { href : '../views/postsby.html?by=category&id='+ encodeURIComponent(category) }" data-role="button"  data-icon="plus" data-transition="slideup"></a></li>							   
+						<li><a data-bind="jqmtext:$root.messages.global_search, attr : { href : '../views/search.html' } " data-role="button"  data-icon="fasearch" data-transition="slideup"></a></li>						
 					</ul>
 				</div>				
 			</div>

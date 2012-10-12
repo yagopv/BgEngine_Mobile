@@ -16,7 +16,6 @@
 			self.post(post);			
 			self.postcomments(post.comments);
 			self.contentvisible(true);	  
-			$("div[data-role='collapsible']").collapsible();
 			$.mobile.loading("hide");			
 		});
 	}        

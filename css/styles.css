@@ -1,9 +1,12 @@
-﻿/* Solve loadmore button position */
+﻿.ui-page { -webkit-backface-visibility: hidden; }
+
+/* Solve loadmore button position */
 .loadmore { top:11px; }
 
 /* Solve filter button position */
 .filter-list-margin { margin-top:7%; }
 .search-contents-margin { margin-top:3%; }
+.comments-margin{ margin-top:2%;}
 
 /* Solve search button position */
 .ui-input-search { top:3px !important; }
@@ -27,13 +30,6 @@ pre {
 /* Post links styles*/
 #post [data-role="content"]  a { color: #0088CC; text-decoration:none; }
 #post [data-role="content"]  a:hover { color: #005580; text-decoration: underline; outline:0 none;}
-
-/* Fix flickering in transitions. Add this class to content, header and footer and take out data-position="fixed"*/
-/*
-.header {position:fixed;z-index:10;top:0;width:100%}
-.content {padding:45px 15px}
-.footer {position:fixed;z-index:10;bottom:0;width:100%}
-*/
 
 .ui-toast {
     color: #FFFFFF;
