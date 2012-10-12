@@ -1,6 +1,4 @@
-﻿.ui-page { -webkit-backface-visibility: hidden; }
-
-/* Solve loadmore button position */
+﻿/* Solve loadmore button position */
 .loadmore { top:11px; }
 
 /* Solve filter button position */
