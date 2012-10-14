@@ -274,6 +274,8 @@ Globalize.cultures[ "default" ] = {
 		"home_latest_posts": "Latest posts published",
 		"home_menu" : "Menu",
 		
+		"post_comments" : "Comments",
+		
 		"categories_categories" : "Categories",
 		
 		"tags_tags" : "Tags",

@@ -43,24 +43,20 @@
 				<div class="center-image">
 					<img data-bind="attr : { src : thumbnailpath, alt : category }" />
 				</div>							
-                <div data-bind="html:text"></div>				
+                <div data-bind="html:text"></div>
+				<h2 data-bind="text: $root.messages.post_comments"></h2>
 				<div data-bind="foreach: $root.postcomments"> 
 					<div class="ui-content ui-bar-a ui-corner-all" >
-						<h3><span data-bind="text: user"></span></h3>
+						<h3 class="ui-content ui-bar-c ui-corner-all"><span data-bind="text: user"></span></h3>
 						<p data-bind="html: message" />
 						<div data-bind="foreach: relatedcomments">
 							<div class="ui-content ui-bar-c ui-corner-all comments-margin" >
-								<h4><span data-bind="text: user"></span></h4>
+								<h4 class="ui-content ui-bar-a ui-corner-all"><span data-bind="text: user"></span></h4>
 								<p data-bind="html: message" />
 							</div>						
 						</div>
 					</div>
 				</div>
-				<ul data-role="listview" data-inset="true">
-					<li data-bind="text:$root.messages.home_menu" data-role="divider" data-theme="a"></li>					
-					<li><a data-bind="text: $root.messages.global_categories, attr : { href : '../views/categories.html' }"></a></li>
-					<li><a data-bind="text : $root.messages.global_tags, attr : { href : '../views/tags.html' } "></a></li>					
-				</ul>								
 			</div>
 			<div data-role="footer" data-theme="a" data-position="fixed">
 				<div data-role="navbar">

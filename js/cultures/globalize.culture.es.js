@@ -85,12 +85,14 @@ Globalize.addCultureInfo( "es", "default", {
 		"global_tags" : "Tags",
 		"global_home" : "Inicio",	
 		"global_searchformore" : "Más en esta categoría",
-		"global_search" : "Buscar",
+		"global_search" : "Buscar",				
 		
 		"home_title": "Inicio",
 		"home_latest_posts": "Ultimos posts publicados",
 		"home_menu" : "Menu",
 
+		"post_comments" : "Comentarios",
+		
 		"categories_categories" : "Categories",
 		
 		"tags_tags" : "Tags",
