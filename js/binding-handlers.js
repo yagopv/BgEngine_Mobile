@@ -12,6 +12,9 @@ ko.bindingHandlers.jqmbuttonenabled = {
         var valueUnwrapped = ko.utils.unwrapObservable(value);
 		if (!valueUnwrapped) {
 			$(element).addClass("ui-disabled");		
+		} else {
+			$(element).removeClass("ui-disabled");		
 		}		
+		
     }
 };

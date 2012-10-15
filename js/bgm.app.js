@@ -1,7 +1,7 @@
 ﻿function App(document) {
-    var self = this;
+    var self = this;	
 	
 	self.config = {
-		api_url : "http://yagoperez.com/api/"
+		api_url : "http://yagoperez.com/api/"		
 	}	
 }

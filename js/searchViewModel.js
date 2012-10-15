@@ -1,7 +1,7 @@
 ﻿function searchViewModel() {
 
 	var self = this;
-	self.searchstring = ko.observable();
+	self.searchstring = ko.observable(Application.lastsearchfilter);
 	self.posts = ko.observableArray();
 	self.pendingposts = ko.observable(true);
 	self.page = 0;
@@ -20,7 +20,8 @@
 		
 	self.searchposts =  function(data, event) {		
 		$.mobile.loading("show");			
-	    $.getJSON(Application.config.api_url + "searchposts?searchstring="  + data.searchstring() + "&page="  + self.page + "&callback=?", function (data) {
+		Application.lastsearchfilter = data.searchstring();
+	    $.getJSON(Application.config.api_url + "searchposts?searchstring="  + data.searchstring() + "&page="  + self.page + "&callback=?", function (data) {			
 	        self.posts(data.posts);
 	        $("div[data-role='content'] ul").listview("refresh");	    
 			self.pendingposts(data.pendingposts);			
@@ -31,7 +32,7 @@
 	
 	self.initialize = function () {      
 	    self.contentvisible(true);	        	        
-	    $.mobile.loading("hide");				
+	    $.mobile.loading("hide");	
 	}        
 	
 	self.initialize();
