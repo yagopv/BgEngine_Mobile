@@ -1,6 +1,6 @@
 # What is BgEngine Mobile
 
-This is a jquery mobile application using BgEngine as its api server.
+This is a jquery mobile application using [BgEngine](https://github.com/yagopv/BgEngine) as its api server.
 
 # Getting started
 
@@ -8,8 +8,16 @@ This is a jquery mobile application using BgEngine as its api server.
 2. Fork or download BgEngine_Mobile and edit js/bgm.app.js. Change the api url to the BgEngine localhost:port/api/ url
 3. Open index.html in a browser and you are ready
 
+# BgEngine Mobile and phonegap build
 
+You can build the BgEngine Mobile code with [phonegap build](http://build.phonegap.com) 
 
+1. Register with phonegap build
+2. Create an app
+3. Upload css/*, js/*, views/*, index.html, splash.jpg, icon.png and config.xml in a zip file or
+   Fork this repository and link it in phonegap build
+
+Once the app is built, you can take the output code and install it in Android, iOS, Windows Phone, ...
 
 
 
