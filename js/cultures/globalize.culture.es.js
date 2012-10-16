@@ -77,7 +77,7 @@ Globalize.addCultureInfo( "es", "default", {
 	messages: {
 	    "global_filteritems": "Filtrar resultados ...",
 	    "global_loadmore": "Cargar siguientes",
-	    "global_sitename": "yagoperez.com",
+	    "global_sitename": "BgEngine Mobile",
 	    "global_copyright": "@BgEngine 2012",
 	    "global_apponline": "La aplicación está conectada",
 	    "global_appoffline": "No hay conexión de red en estos momentos",

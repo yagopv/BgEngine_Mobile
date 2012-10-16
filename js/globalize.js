@@ -260,7 +260,7 @@ Globalize.cultures[ "default" ] = {
 	messages: {
 	    "global_filteritems": "Filter items ...",
 	    "global_loadmore": "Load more ...",
-        "global_sitename": "yagoperez.com",
+        "global_sitename": "BgEngine Mobile",
         "global_copyright" : "@BgEngine 2012",
 	    "global_apponline": "The app is connected now",
 	    "global_appoffline": "There is no network connection",
