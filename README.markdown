@@ -16,6 +16,8 @@ You can build the BgEngine Mobile code with [phonegap build](http://build.phoneg
 2. Create an app
 3. Upload css/*, js/*, views/*, index.html, splash.jpg, icon.png and config.xml in a zip file or
    Fork this repository and link it in phonegap build
+   
+If you want to download and test the app in your device you can do it [here](https://build.phonegap.com/apps/227435/share)
 
 Once the app is built, you can take the output code and install it in Android, iOS, Windows Phone, ...
 
