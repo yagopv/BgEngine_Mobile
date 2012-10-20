@@ -13,11 +13,13 @@
     <author href="https://build.phonegap.com" email="yagoperez@outlook.com">
         Yago Perez Vazquez
     </author>
-
+	
 	<icon src="icon.png" />
 	<gap:splash src="splash.png" />
 
-  <feature name="http://api.phonegap.com/1.0/network"/>
-  <feature name="http://api.phonegap.com/1.0/notification"/>
+	<preference name="phonegap-version" value="2.0.0" />
+	
+	<feature name="http://api.phonegap.com/1.0/network"/>
+	<feature name="http://api.phonegap.com/1.0/notification"/>
   
 </widget>
