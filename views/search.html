@@ -22,7 +22,7 @@
 		<script type="text/javascript" src="../js/searchViewModel.js"></script>        				
 		<script type="text/javascript">
 		    $(document).bind("mobileinit", function () {
-		        $.mobile.defaultPageTransition = "slide";				
+		        $.mobile.defaultPageTransition = "none";				
 		        $.mobile.listview.prototype.options.filterPlaceholder = Globalize.localize("global_filteritems", navigator.language.substr(0, 2));		        
 		    });		
 		</script>		
@@ -61,9 +61,9 @@
 			<div data-role="footer" data-theme="a" data-position="fixed">
 				<div data-role="navbar">
 					<ul>
-						<li><a data-bind="jqmtext:messages.global_home" href="../index.html" data-icon="home" data-transition="slideup"></a></li>
-						<li><a data-bind="jqmtext:messages.global_categories, attr : { href : '../views/categories.html' }" data-role="button"  data-icon="book" data-transition="slideup"></a></li>							   												
-						<li><a data-bind="jqmtext:messages.global_tags, attr : { href : '../views/tags.html' }" data-role="button"  data-icon="tags" data-transition="slideup"></a></li>							   																		
+						<li><a data-bind="jqmtext:messages.global_home" href="../index.html" data-icon="home"></a></li>
+						<li><a data-bind="jqmtext:messages.global_categories, attr : { href : '../views/categories.html' }" data-role="button"  data-icon="book"></a></li>							   												
+						<li><a data-bind="jqmtext:messages.global_tags, attr : { href : '../views/tags.html' }" data-role="button"  data-icon="tags"></a></li>							   																		
 					</ul>
 				</div>				
 			</div>			
