@@ -61,7 +61,7 @@
 			<div data-role="footer" data-theme="a" data-position="fixed">
 				<div data-role="navbar">
 					<ul data-bind="with:post">
-						<li><a data-bind="jqmtext:$root.messages.global_home" href="../index.html" data-icon="home"></a></li>
+						<li><a data-bind="jqmtext:$root.messages.global_home, attr : { href : '../index.html' }" data-icon="home"></a></li>
 						<li><a data-bind="jqmtext:$root.messages.global_categories, attr : { href : '../views/categories.html' }" data-role="button"  data-icon="book"></a></li>							   
 						<li><a data-bind="jqmtext:$root.messages.global_tags, attr : { href : '../views/tags.html' } " data-role="button"  data-icon="tags"></a></li>							   
 						<li><a data-bind="jqmtext:$root.messages.global_searchformore,  attr : { href : '../views/postsby.html?by=category&id='+ encodeURIComponent(category) }" data-role="button"  data-icon="plus"></a></li>							   
