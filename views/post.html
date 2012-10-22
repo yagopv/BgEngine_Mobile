@@ -38,20 +38,20 @@
 				<h1 data-bind="text : messages.global_sitename"></h1>				
 			</div>
 			<div data-role="content" data-theme="c" data-bind="with : post, visible : contentvisible">                
-				<h2 data-bind="text:title"></h2>
-				<p data-bind="text:description"></p>	
+				<h2 class="ui-content ui-bar-b ui-corner-all" data-bind="text:title"></h2>
+				<h4 class="ui-content ui-bar-a ui-corner-all" data-bind="text:description"></h4>					
 				<div class="center-image">
 					<img data-bind="attr : { src : thumbnailpath, alt : category }" />
 				</div>							
                 <div data-bind="html:text"></div>
-				<h2 data-bind="text: $root.messages.post_comments"></h2>
-				<div data-bind="foreach: $root.postcomments"> 
-					<div class="ui-content ui-bar-a ui-corner-all comments-margin" >
-						<h3 class="ui-content ui-bar-c ui-corner-all"><span data-bind="text: user"></span></h3>
+				<h2 class="ui-content ui-bar-b ui-corner-all" data-bind="text: $root.messages.post_comments, visible : $root.postcomments().length > 0"></h2>
+				<div  id="postcomments" data-bind="foreach: $root.postcomments"> 
+					<div class="ui-content ui-bar-d ui-corner-all comments-margin" >
+						<h4 class="ui-content"><span data-bind="text: user"></span></h4>
 						<p data-bind="html: message" />
-						<div data-bind="foreach: relatedcomments">
+						<div class="relatedcomment" data-bind="foreach: relatedcomments">
 							<div class="ui-content ui-bar-c ui-corner-all comments-margin" >
-								<h4 class="ui-content ui-bar-a ui-corner-all"><span data-bind="text: user"></span></h4>
+								<h4 class="ui-content"><span data-bind="text: user"></span></h4>
 								<p data-bind="html: message" />
 							</div>						
 						</div>

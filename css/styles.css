@@ -4,7 +4,7 @@
 /* Solve filter button position */
 .filter-list-margin { margin-top:7%; }
 .search-contents-margin { margin-top:3%; }
-.comments-margin{ margin-top:2%;}
+.comments-margin{ margin-top:3%;}
 
 /* Solve search button position */
 .ui-input-search { top:3px !important; }
@@ -29,6 +29,9 @@ pre {
 #post [data-role="content"]  a { color: #0088CC; text-decoration:none; }
 #post [data-role="content"]  a:hover { color: #005580; text-decoration: underline; outline:0 none;}
 
+#postcomments  div { font-weight : normal;}
+#postcomments  .relatedcomment { opacity:0.85; }
+
 .ui-toast {
     color: #FFFFFF;
     background-color: #555;
@@ -46,6 +49,6 @@ pre {
 
 .overflow-x-allowed { overflow-x : scroll; }
 
-.center-image { margin:0 auto; width:50%;}
-	.center-image img { width:100%; }
+.center-image { width:100%; text-align:center; margin-top:3%;}
+	.center-image img { max-width:300px; }
 	
