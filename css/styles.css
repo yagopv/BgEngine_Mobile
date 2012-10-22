@@ -31,6 +31,7 @@ pre {
 
 #postcomments  div { font-weight : normal;}
 #postcomments  .relatedcomment { opacity:0.85; }
+#postdescription { font-weight:normal; opacity:0.85; }
 
 .ui-toast {
     color: #FFFFFF;
