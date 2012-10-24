@@ -35,7 +35,8 @@
 	<body>
 		<div id="post" data-role="page" data-add-back-btn="true">
 			<div data-role="header" data-theme="a" data-position="fixed">
-				<h1 data-bind="text : messages.global_sitename"></h1>				
+				<h1 data-bind="text : messages.global_sitename"></h1>		
+				<a href="index.html" data-bind="attr : { href : '../index.html' }" data-role="button" data-icon="home" data-iconpos="notext" data-mini="true" data-inline="true" class="ui-btn-right"></a>				
 			</div>
 			<div data-role="content" data-theme="c" data-bind="with : post, visible : contentvisible">                
 				<h3 class="ui-content ui-bar-b ui-corner-all" data-bind="text:title"></h3>
@@ -61,7 +62,6 @@
 			<div data-role="footer" data-theme="a" data-position="fixed">
 				<div data-role="navbar">
 					<ul data-bind="with:post">
-						<li><a data-bind="jqmtext:$root.messages.global_home, attr : { href : '../index.html' }" data-icon="home"></a></li>
 						<li><a data-bind="jqmtext:$root.messages.global_categories, attr : { href : '../views/categories.html' }" data-role="button"  data-icon="book"></a></li>							   
 						<li><a data-bind="jqmtext:$root.messages.global_tags, attr : { href : '../views/tags.html' } " data-role="button"  data-icon="tags"></a></li>							   
 						<li><a data-bind="jqmtext:$root.messages.global_searchformore,  attr : { href : '../views/postsby.html?by=category&id='+ encodeURIComponent(category) }" data-role="button"  data-icon="plus"></a></li>							   

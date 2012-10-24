@@ -53,3 +53,7 @@ pre {
 .center-image { width:100%; text-align:center; margin-top:3%;}
 	.center-image img { max-width:300px; }
 	
+div[data-reset-content="true"]	{ margin:0; padding:0 15px;}
+    div[data-reset-content="true"]  div[data-role="collapsible-set"] { margin-top:0; }
+	
+img[data-role="bgm-list-image"] { margin:20px 1%; height:70px; width:100%; background-size: 100%; }
