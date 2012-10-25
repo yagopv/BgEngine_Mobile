@@ -259,6 +259,7 @@ Globalize.cultures[ "default" ] = {
 	// For localized strings
 	messages: {
 	    "global_filteritems": "Filter items ...",
+		"global_backbuttontext": "Back",
 	    "global_loadmore": "Load more ...",
         "global_sitename": "BgEngine Mobile",
         "global_copyright" : "@BgEngine 2012",

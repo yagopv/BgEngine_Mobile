@@ -6,7 +6,7 @@
 	self.pendingposts = ko.observable(true);
 	self.page = 0;
 	self.contentvisible = ko.observable(false);
-	self.messages = Globalize.culture(navigator.language.substr(0,2)).messages;	
+	self.messages = Globalize.culture(Application.appLanguage()).messages;	
 
 	self.loadmore =  function(data, event) {		
 		self.page = self.page + 1;

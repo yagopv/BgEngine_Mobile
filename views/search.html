@@ -13,17 +13,22 @@
         <script type="text/javascript" src="../js/url.parser.js"></script>
 		<script type="text/javascript" src="../js/globalize.js"></script>
 		<script type="text/javascript" src="../js/cultures/globalize.culture.es.js"></script>
+		<script type="text/javascript" src="../js/ga.js"></script>
         <script type="text/javascript" src="../js/binding-handlers.js"></script>
 		<script type="text/javascript" src="../js/homeViewModel.js"></script>
         <script type="text/javascript" src="../js/postViewModel.js"></script>
         <script type="text/javascript" src="../js/postsbyViewModel.js"></script>
 		<script type="text/javascript" src="../js/categoriesViewModel.js"></script>        
 		<script type="text/javascript" src="../js/tagsViewModel.js"></script>        		
-		<script type="text/javascript" src="../js/searchViewModel.js"></script>        				
+		<script type="text/javascript" src="../js/searchViewModel.js"></script> 
+		<script type="text/javascript" src="../js/bgm.app.js"></script>		
 		<script type="text/javascript">
-		    $(document).bind("mobileinit", function () {
+			var Application =  new App();
+		    $(document).bind("mobileinit", function () {				
 		        $.mobile.defaultPageTransition = "none";				
-		        $.mobile.listview.prototype.options.filterPlaceholder = Globalize.localize("global_filteritems", navigator.language.substr(0, 2));		        
+		        $.mobile.listview.prototype.options.filterPlaceholder = Globalize.localize("global_filteritems", Application.appLanguage());		        
+				$.mobile.page.prototype.options.backBtnText = Globalize.localize("global_backbuttontext", Application.appLanguage());		        
+				$.mobile.page.prototype.options.backBtnTheme = "a";
 		    });		
 		</script>		
 		<script type="text/javascript" src="../js/jquery.mobile.js"></script>	
@@ -45,7 +50,7 @@
 							<ul data-role="listview" data-bind="foreach:posts">
 								<li>																	
 									<a data-bind="attr : { href : '../views/post.html?postid='+ postid }" >									
-										<img data-role="bgm-list-image" data-bind="attr : { src : thumbnailpath, alt : category }" />
+										<img data-role="bgm-list-image" data-bind="attr : { src : Application.config.api_url + 'getthumbnail?url=' + thumbnailpath + '&width=70&height=70', alt : category }" />
 										<h5 class="remove-ellipsis" data-bind="text:title"></h5>
 										<p class="remove-ellipsis" data-bind="text:description"></p>				
 										<p class="ui-li-aside"><strong data-bind="text:date"></strong></p>

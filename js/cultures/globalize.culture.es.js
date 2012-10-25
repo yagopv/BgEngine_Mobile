@@ -76,6 +76,7 @@ Globalize.addCultureInfo( "es", "default", {
 	},
 	messages: {
 	    "global_filteritems": "Filtrar resultados ...",
+		"global_backbuttontext": "Atrás",
 	    "global_loadmore": "Cargar siguientes",
 	    "global_sitename": "BgEngine Mobile",
 	    "global_copyright": "@BgEngine 2012",

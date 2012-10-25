@@ -6,12 +6,12 @@
 	self.page = 1;
 	self.pendingposts = ko.observable(true);
 	self.contentvisible = ko.observable(false);
-	self.messages = Globalize.culture(navigator.language.substr(0, 2)).messages;
+	self.messages = Globalize.culture(Application.appLanguage()).messages;
 	if ($.mobile.pageData.by == undefined) {
 		$.mobile.pageData = $.url(document.location.href).param();
 	}
 
-	self.collapsibletext = Globalize.localize("postsby_filteredby", navigator.language.substr(0, 2))
+	self.collapsibletext = Globalize.localize("postsby_filteredby", Application.appLanguage())
 						 + $.mobile.pageData.id;
 
 	self.loadmore = function () {

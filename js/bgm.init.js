@@ -1,6 +1,4 @@
-﻿var Application =  new App();
-
-$("#home").live("pageinit", function () {
+﻿$("#home").live("pageinit", function () {
 	ko.applyBindings(new homeViewModel());	
 });	
 
@@ -25,6 +23,7 @@ $("#search").live("pageinit", function () {
 });
 
 $("#home, #post, #postsby, #categories, #tags, #search").live("pageshow", function () {
+    $("body").height(0);
 	var iscontentvisible = ko.contextFor($(this)[0]);
 	if (!ko.utils.unwrapObservable(iscontentvisible.$data.contentvisible)) {
 		$.mobile.loading("show");
@@ -43,11 +42,11 @@ function onDeviceReady() {
 }
 
 function onOnline() {
-	showToast(Globalize.localize("global_apponline", navigator.language.substr(0, 2)));
+	showToast(Globalize.localize("global_apponline", Application.appLanguage()));
 }
 
 function onOffline() {
-    showToast(Globalize.localize("global_appoffline", navigator.language.substr(0, 2)));
+    showToast(Globalize.localize("global_appoffline", Application.appLanguage()));
 }
 
 function showToast(message) {
@@ -57,11 +56,7 @@ function showToast(message) {
 if (Application.config.google_analytics_code != "") {
   var _gaq = _gaq || [];
   _gaq.push(['_setAccount', Application.config.google_analytics_code]);
-  _gaq.push(['_trackPageview']);
-  (function() {
-	var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-	ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-	var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-  })();		  
+  _gaq.push(['_setDomainName', 'none']);
+  _gaq.push(['_trackPageview']);  
 }
 

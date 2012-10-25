@@ -4,7 +4,7 @@
 
     self.tags = ko.observableArray();
 	self.contentvisible = ko.observable(false);
-	self.messages = Globalize.culture(navigator.language.substr(0,2)).messages;
+	self.messages = Globalize.culture(Application.appLanguage()).messages;
 
 	self.getalldata = function () {
 	    $.getJSON(Application.config.api_url + "gettags?callback=?", function (tags) {

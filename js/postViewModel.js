@@ -5,7 +5,7 @@
 	self.post = ko.observable();
 	self.postcomments = ko.observableArray();
 	self.contentvisible = ko.observable(false);	
-	self.messages = Globalize.culture(navigator.language.substr(0, 2)).messages;
+	self.messages = Globalize.culture(Application.appLanguage()).messages;
 	
 	if ($.mobile.pageData.postid == undefined) {
 		$.mobile.pageData = $.url(document.location.href).param();

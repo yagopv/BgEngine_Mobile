@@ -6,7 +6,7 @@
     self.page = 2;
 	self.pendingposts = ko.observable(true);
 	self.contentvisible = ko.observable(false);
-	self.messages = Globalize.culture(navigator.language.substr(0,2)).messages;
+	self.messages = Globalize.culture(Application.appLanguage()).messages;
 
 	self.evaluatepending = function(a,b,c) {
 		if (!self.pendingposts()) {
@@ -30,7 +30,7 @@
 			self.pendingposts(data.pendingposts);
 	        $("div[data-role='content'] ul").listview("refresh");
 	        self.contentvisible(true);
-	        document.title = Globalize.localize("home_title", navigator.language.substr(0, 2));
+	        document.title = Globalize.localize("home_title", Application.appLanguage());
 	        $.mobile.loading("hide");
 	    });
 	}
