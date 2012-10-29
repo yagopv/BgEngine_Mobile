@@ -27,7 +27,7 @@ $("#home, #post, #postsby, #categories, #tags, #search").live("pageshow", functi
 	var iscontentvisible = ko.contextFor($(this)[0]);
 	if (!ko.utils.unwrapObservable(iscontentvisible.$data.contentvisible)) {
 		$.mobile.loading("show");
-		$("ui-loader").css("top","50%");
+		$(".ui-loader").css("top","50%");
 	}
 });
 
