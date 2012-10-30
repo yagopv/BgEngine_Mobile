@@ -42,7 +42,7 @@
 				$el.css('top', top + 'px');
 			}
 			else {
-			    $el.css('top', '50%');
+			    $el.css('top', '75%');
 			}			
             $el.css('left', left + 'px')
 
