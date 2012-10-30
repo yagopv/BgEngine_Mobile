@@ -11,7 +11,7 @@
 		$.mobile.pageData = $.url(document.location.href).param();
 	}
 
-	self.collapsibletext = $.mobile.pageData.id;
+	self.titletext = $.mobile.pageData.id;
 
 	self.loadmore = function () {
 	    $.mobile.loading("show");
