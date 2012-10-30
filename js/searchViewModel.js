@@ -34,7 +34,12 @@
 			dataType : "jsonp",
 			timeout : 10000
 		}).success(function(data) {
-	        self.posts(data.posts);
+			if (data.posts) {
+				self.posts(data.posts);
+			}
+			else {
+				self.posts({});
+			}				
 	        $("div[data-role='content'] ul").listview("refresh");	    
 			self.pendingposts(data.pendingposts);			
 	        $.mobile.loading("hide");			
