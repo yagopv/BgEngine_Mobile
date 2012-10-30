@@ -4,7 +4,7 @@
 	self.searchstring = ko.observable(Application.lastsearchfilter);
 	self.posts = ko.observableArray();
 	self.pendingposts = ko.observable(true);
-	self.page = 0;
+	self.page = 1;
 	self.contentvisible = ko.observable(false);
 	self.messages = Globalize.culture(Application.appLanguage()).messages;	
 
@@ -28,6 +28,9 @@
 		
 	self.searchposts =  function(data, event) {		
 		$.mobile.loading("show");			
+		if (Application.lastsearchfilter != "" && Application.lastsearchfilter !=  data.searchstring()) {
+			self.page = 1;
+		}						
 		Application.lastsearchfilter = data.searchstring();
 		$.ajax({
 			url : Application.config.api_url + "searchposts?searchstring="  + data.searchstring() + "&page="  + self.page + "&callback=?",
@@ -43,8 +46,10 @@
 	        $("div[data-role='content'] ul").listview("refresh");	    
 			self.pendingposts(data.pendingposts);			
 	        $.mobile.loading("hide");			
-			$("img[data-role='bgm-list-image']").lazyload({effect : "fadeIn"}).addClass("img-loaded");			
-			self.page = 0;
+			$("img[data-role='bgm-list-image']").lazyload({effect : "fadeIn"}).addClass("img-loaded");							
+			if (Application.lastsearchfilter == "")	{
+			    self.page = 1;
+			}
 		}).error(function() {
 			$('<div id="my_toast" data-role="toast">' + Globalize.localize("global_unable_connect", Application.appLanguage()) + '</div>').appendTo($("body")).toast().toast("show");
 	        $.mobile.loading("hide");			

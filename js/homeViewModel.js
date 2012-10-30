@@ -3,7 +3,7 @@
     var self = this;
 
     self.homeposts = ko.observableArray();
-    self.page = 2;
+    self.page = 1;
 	self.pendingposts = ko.observable(true);
 	self.contentvisible = ko.observable(false);
 	self.messages = Globalize.culture(Application.appLanguage()).messages;
@@ -46,6 +46,7 @@
 	        document.title = Globalize.localize("home_title", Application.appLanguage());			
 	        $.mobile.loading("hide");
 			$("img[data-role='bgm-list-image']").lazyload({effect : "fadeIn"}).addClass("img-loaded");
+			self.page = self.page + 1;
 		})
 		.error(function() {
 			$('<div id="my_toast" data-role="toast">' + Globalize.localize("global_unable_connect", Application.appLanguage()) + '</div>').appendTo($("body")).toast().toast("show");

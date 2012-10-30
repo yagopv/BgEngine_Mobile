@@ -46,8 +46,9 @@
 			$("div[data-role='content'] ul").listview("refresh");			
 			self.contentvisible(true);
 			$.mobile.loading("hide");
-			$("img[data-role='bgm-list-image']").lazyload({effect : "fadeIn"}).addClass("img-loaded");					})
-		.error(function() {
+			$("img[data-role='bgm-list-image']").lazyload({effect : "fadeIn"}).addClass("img-loaded");					
+			self.page = self.page + 1;
+		}).error(function() {
 			$('<div id="my_toast" data-role="toast">' + Globalize.localize("global_unable_connect", Application.appLanguage()) + '</div>').appendTo($("body")).toast().toast("show");
 	        $.mobile.loading("hide");			
 		});			
