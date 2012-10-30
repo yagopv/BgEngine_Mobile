@@ -10,6 +10,7 @@
 		<script type="text/javascript" src="../js/jquery.js"></script>
 		<script type="text/javascript" src="../js/knockout-2.1.js"></script>
 		<script type="text/javascript" src="../js/mapper.js"></script>		
+		<script type="text/javascript" src="../js/jquery.lazy.load.js"></script>				
 		<script type="text/javascript" src="../js/url.parser.js"></script>
 		<script type="text/javascript" src="../js/globalize.js"></script>
 		<script type="text/javascript" src="../js/cultures/globalize.culture.es.js"></script>
@@ -40,26 +41,21 @@
 	<body>
 		<div id="postsby" data-role="page" data-add-back-btn="true">
 			<div data-role="header" data-theme="a" data-position="fixed">
-				<h1 data-bind="text : messages.global_sitename"></h1>	
+				<h1 data-bind="text : collapsibletext"></h1>	
 				<a data-bind="attr : { href : '../main.html' }" data-role="button" data-icon="home" data-iconpos="notext" data-mini="true" data-inline="true" class="ui-btn-right"></a>				
 			</div>
-			<div data-role="content" data-reset-content="true" data-theme="c" data-bind="visible : contentvisible">
-				<div data-role="collapsible-set" data-theme="b" data-content-theme="c" data-inset="false">
-					<div id="postsbycollapsible" data-role="collapsible" data-collapsed="true">
-						<h2 data-bind="jqmtext : collapsibletext"></h2>
-						<ul class="filter-list-margin" data-role="listview" data-bind="foreach:postsby" data-filter="true">
-							<li>																	
-								<a data-bind="attr : { href : 'post.html?postid='+ postid }">							
-									<img data-role="bgm-list-image" data-bind="attr : { src : Application.config.api_url + 'getthumbnail?url=' + thumbnailpath + '&width=70&height=70', alt : category }" />
-									<h5 class="remove-ellipsis" data-bind="text:title"></h5>
-									<p class="remove-ellipsis" data-bind="text:description"></p>				
-									<p><strong data-bind="text:date"></strong></p>									
-								</a>				
-							</li>															
-						</ul>	
-					   <a href="#" class="loadmore" data-role="button" data-theme="b" data-bind="event : { tap:loadmore }, jqmtext : messages.global_loadmore, jqmbuttonenabled : pendingposts"></a>
-					</div>
-				</div>
+			<div data-role="content" data-reset-content="true" data-theme="c" data-bind="visible : contentvisible">				
+				<ul class="filter-list-margin" data-role="listview" data-bind="foreach:postsby" data-filter="true">
+					<li>																	
+						<a data-bind="attr : { href : 'post.html?postid='+ postid }">							
+							<img data-role="bgm-list-image" data-bind="attr : { src : '../img/transparent.gif', 'data-original' : Application.config.api_url + 'getthumbnail?url=' + thumbnailpath + '&width=70&height=70', alt : category }" />
+							<h5 class="remove-ellipsis" data-bind="text:title"></h5>
+							<p class="remove-ellipsis" data-bind="text:description"></p>				
+							<p><strong data-bind="text:date"></strong></p>									
+						</a>				
+					</li>															
+				</ul>	
+			   <a href="#" class="loadmore" data-role="button" data-theme="b" data-bind="event : { tap:loadmore }, jqmtext : messages.global_loadmore, jqmbuttonenabled : pendingposts"></a>
 			</div>
 			<div data-role="footer" data-theme="a" data-position="fixed">
 				<div data-role="navbar">

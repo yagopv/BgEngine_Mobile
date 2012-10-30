@@ -7,13 +7,19 @@
 	self.messages = Globalize.culture(navigator.language.substr(0,2)).messages;
 
 	self.getalldata = function () {
-	    $.getJSON(Application.config.api_url + "getcategories?callback=?", function (categories) {
+		$.ajax({
+			url : Application.config.api_url + "getcategories?callback=?",
+			dataType : "jsonp",
+			timeout : 10000
+		}).success(function(categories) {
 	        self.categories(categories);
 	        $("div[data-role='content'] ul").listview("refresh");
-	        self.contentvisible(true);	        
-	        //document.title = Globalize.localize("home_title", navigator.language.substr(0, 2));
+	        self.contentvisible(true);	        	        
 	        $.mobile.loading("hide");			
-	    });
+		}).error(function() {
+			$('<div id="my_toast" data-role="toast">' + Globalize.localize("global_unable_connect", Application.appLanguage()) + '</div>').appendTo($("body")).toast().toast("show");
+	        $.mobile.loading("hide");			
+		});			
 	}
         
 	self.getalldata();

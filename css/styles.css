@@ -6,8 +6,7 @@
 .search-contents-margin { margin-top:3%; }
 .comments-margin{ margin-top:3%;}
 
-/* Solve search button position */
-.ui-input-search { top:3px !important; }
+
 
 /* Remove ellipsis in home and postsby views to show all titles and description */
 .remove-ellipsis { text-overflow: ellipsis; overflow: visible; white-space: normal; }
@@ -44,16 +43,14 @@ pre {
     -webkit-border-radius: 6px;
     -moz-border-radius: 6px;
     border-radius: 6px;
-    position: fixed;
-    z-index: 5000;
+    position: fixed;	
+    z-index: 5000;	
 }
 
 .overflow-x-allowed { overflow-x : scroll; }
 
 .center-image { width:100%; text-align:center; margin-top:3%;}
 	.center-image img { max-width:300px; }
-	
-div[data-reset-content="true"]	{ margin:0; padding:0 15px;}
-    div[data-reset-content="true"]  div[data-role="collapsible-set"] { margin-top:0; }
-	
+		
 img[data-role="bgm-list-image"] { margin:20px 1%; height:70px; width:100%; background-size: 100%; }
+  

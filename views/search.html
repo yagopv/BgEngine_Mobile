@@ -10,6 +10,7 @@
 		<script type="text/javascript" src="../js/jquery.js"></script>
 		<script type="text/javascript" src="../js/knockout-2.1.js"></script>
 		<script type="text/javascript" src="../js/mapper.js"></script>		
+		<script type="text/javascript" src="../js/jquery.lazy.load.js"></script>						
         <script type="text/javascript" src="../js/url.parser.js"></script>
 		<script type="text/javascript" src="../js/globalize.js"></script>
 		<script type="text/javascript" src="../js/cultures/globalize.culture.es.js"></script>
@@ -50,7 +51,7 @@
 							<ul data-role="listview" data-bind="foreach:posts">
 								<li>																	
 									<a data-bind="attr : { href : '../views/post.html?postid='+ postid }" >									
-										<img data-role="bgm-list-image" data-bind="attr : { src : Application.config.api_url + 'getthumbnail?url=' + thumbnailpath + '&width=70&height=70', alt : category }" />
+										<img data-role="bgm-list-image" data-bind="attr : { src : '../img/transparent.gif', 'data-original' : Application.config.api_url + 'getthumbnail?url=' + thumbnailpath + '&width=70&height=70', alt : category }" />
 										<h5 class="remove-ellipsis" data-bind="text:title"></h5>
 										<p class="remove-ellipsis" data-bind="text:description"></p>				
 										<p class="ui-li-aside"><strong data-bind="text:date"></strong></p>

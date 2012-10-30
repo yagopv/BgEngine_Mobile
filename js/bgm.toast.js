@@ -34,11 +34,16 @@
 
             var bw = $('body').width()
             var bh = $('body').height()
-
+			
             var top = (bh * 3 / 4) - $el.height() / 2
             var left = bw / 2 - $el.width() / 2
 
-            $el.css('top', top + 'px')
+			if (bh != 0) {
+				$el.css('top', top + 'px');
+			}
+			else {
+			    $el.css('top', '50%');
+			}			
             $el.css('left', left + 'px')
 
             // fade in and fade out after the given time

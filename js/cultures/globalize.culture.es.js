@@ -78,27 +78,27 @@ Globalize.addCultureInfo( "es", "default", {
 	    "global_filteritems": "Filtrar resultados ...",
 		"global_backbuttontext": "Atrás",
 	    "global_loadmore": "Cargar siguientes",
-	    "global_sitename": "BgEngine Mobile",
-	    "global_copyright": "@BgEngine 2012",
+	    "global_sitename": "yagoperez.com",
+	    "global_copyright": "@yagoperez.com 2012",
 	    "global_apponline": "La aplicación está conectada",
 	    "global_appoffline": "No hay conexión de red en estos momentos",
-		"global_categories" : "Categories",
+		"global_categories" : "Categorías",
 		"global_tags" : "Tags",
 		"global_home" : "Inicio",	
-		"global_searchformore" : "Más en esta categoría",
+		"global_searchformore" : "Más",
 		"global_search" : "Buscar",				
+		"global_unable_connect" : "No ha sido posible establecer una conexion. Inténtalo más tarde",
 		
 		"home_title": "Inicio",
-		"home_latest_posts": "Ultimos posts publicados",
+		"home_latest_posts": "Ultimos posts",
 		"home_menu" : "Menu",
 
 		"post_comments" : "Comentarios",
 		
-		"categories_categories" : "Categories",
+		"categories_categories" : "Categorías",
 		
 		"tags_tags" : "Tags",
 		
-        "postsby_filteredby" : "Posts filtrados por ",
         "postsby_category" : "Categoría",
         "postsby_tag" : "Tag",
 		

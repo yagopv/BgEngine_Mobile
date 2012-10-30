@@ -11,23 +11,39 @@
 	self.loadmore =  function(data, event) {		
 		self.page = self.page + 1;
 	    $.mobile.loading("show");
-	    $.getJSON(Application.config.api_url + "searchposts?searchstring="  + data.searchstring() + "&page="  + self.page + "&callback=?", function (data) {
+		$.ajax({
+			url : Application.config.api_url + "searchposts?searchstring="  + data.searchstring() + "&page="  + self.page + "&callback=?",
+			dataType : "jsonp",
+			timeout : 10000
+		}).success(function(data) {
 	        $.map(data.posts, function (item) { self.posts.push(item) });	        
 			self.pendingposts(data.pendingposts);
 	        $.mobile.loading("hide");
-	    });	
+			$("img[data-role='bgm-list-image']").not(".img-loaded").lazyload({effect : "fadeIn"}).addClass("img-loaded");
+		}).error(function() {
+			$('<div id="my_toast" data-role="toast">' + Globalize.localize("global_unable_connect", Application.appLanguage()) + '</div>').appendTo($("body")).toast().toast("show");
+	        $.mobile.loading("hide");			
+		});	
 	}
 		
 	self.searchposts =  function(data, event) {		
 		$.mobile.loading("show");			
 		Application.lastsearchfilter = data.searchstring();
-	    $.getJSON(Application.config.api_url + "searchposts?searchstring="  + data.searchstring() + "&page="  + self.page + "&callback=?", function (data) {			
+		$.ajax({
+			url : Application.config.api_url + "searchposts?searchstring="  + data.searchstring() + "&page="  + self.page + "&callback=?",
+			dataType : "jsonp",
+			timeout : 10000
+		}).success(function(data) {
 	        self.posts(data.posts);
 	        $("div[data-role='content'] ul").listview("refresh");	    
 			self.pendingposts(data.pendingposts);			
 	        $.mobile.loading("hide");			
+			$("img[data-role='bgm-list-image']").lazyload({effect : "fadeIn"}).addClass("img-loaded");			
 			self.page = 0;
-	    });	
+		}).error(function() {
+			$('<div id="my_toast" data-role="toast">' + Globalize.localize("global_unable_connect", Application.appLanguage()) + '</div>').appendTo($("body")).toast().toast("show");
+	        $.mobile.loading("hide");			
+		});				
 	}
 	
 	self.initialize = function () {      
