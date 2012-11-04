@@ -10,7 +10,7 @@
 		$.ajax({
 			url : Application.config.api_url + "gettags?callback=?",
 			dataType : "jsonp",
-			timeout : 10000
+			timeout : Application.config.timeout
 		}).success(function(tags) {
 	        self.tags(tags);
 	        $("div[data-role='content'] ul").listview("refresh");

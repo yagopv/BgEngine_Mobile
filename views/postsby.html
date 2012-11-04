@@ -51,7 +51,9 @@
 							<img data-role="bgm-list-image" data-bind="attr : { src : '../img/transparent.gif', 'data-original' : Application.config.api_url + 'getthumbnail?url=' + thumbnailpath + '&width=70&height=70', alt : category }" />
 							<h5 class="remove-ellipsis" data-bind="text:title"></h5>
 							<p class="remove-ellipsis" data-bind="text:description"></p>				
-							<p><strong data-bind="text:date"></strong></p>									
+							<div class="generic-margin">
+								<p><strong data-bind="text:date + $parent.getCommentsMessage(commentscount)"></strong></p>									
+							</div>
 						</a>				
 					</li>															
 				</ul>	

@@ -17,7 +17,7 @@
 		$.ajax({
 			url : Application.config.api_url + "getpost?postid=" + $.mobile.pageData.postid + "&callback=?",
 			dataType : "jsonp",
-			timeout : 10000
+			timeout : Application.config.timeout
 		}).success(function(post) {
 			self.title(post.title);
 			self.category(post.category);

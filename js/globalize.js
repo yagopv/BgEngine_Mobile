@@ -271,6 +271,8 @@ Globalize.cultures[ "default" ] = {
 		"global_searchformore" : "More",
 		"global_search" : "Search",
 		"global_unable_connect" : "Unable to connect. Try again later",
+		"global_comment" : "comment",
+		"global_comments" : "comments",		
 		
 		"home_title": "Home",
 		"home_latest_posts": "Latest posts",

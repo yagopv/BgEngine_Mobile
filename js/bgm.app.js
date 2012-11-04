@@ -3,7 +3,8 @@
 	
 	self.config = {
 		api_url : "http://bgengine.yagoperez.com/api/",
-		google_analytics_code : "UA-29286359-2"
+		google_analytics_code : "UA-29286359-2",
+		timeout : 15000
 	}	
 	
 	self.appLanguage = function() {

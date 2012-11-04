@@ -13,13 +13,23 @@
 
 	self.titletext = $.mobile.pageData.id;
 
+	self.getCommentsMessage = function(count) {
+	    if (count == 0) {
+		    return "";
+		} else if (count == 1){
+		    return " / 1 " + Globalize.localize("global_comment", Application.appLanguage());
+		} else {
+			return " / " + count + " " + Globalize.localize("global_comments", Application.appLanguage());
+		}		
+	}
+	
 	self.loadmore = function () {
 	    $.mobile.loading("show");
 		$.mobile.pageData = $.url(document.location.href).param();        
 		$.ajax({
 			url : Application.config.api_url + "getpostsby?by=" + $.mobile.pageData.by + "&id=" + $.mobile.pageData.id + "&page=" + self.page + "&callback=?",
 			dataType : "jsonp",
-			timeout : 10000
+			timeout : Application.config.timeout
 		}).success(function(data) {
 			$.map(data.posts, function (item) { self.postsby.push(item) });
 			self.pendingposts(data.pendingposts);
@@ -38,7 +48,7 @@
 		$.ajax({
 			url : Application.config.api_url + "getpostsby?by=" + $.mobile.pageData.by + "&id=" + $.mobile.pageData.id + "&callback=?",
 			dataType : "jsonp",
-			timeout : 10000
+			timeout : Application.config.timeout
 		}).success(function(data) {
 		    self.postsby(data.posts);
 			self.pendingposts(data.pendingposts);

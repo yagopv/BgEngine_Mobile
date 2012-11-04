@@ -10,7 +10,7 @@
 		$.ajax({
 			url : Application.config.api_url + "getcategories?callback=?",
 			dataType : "jsonp",
-			timeout : 10000
+			timeout : Application.config.timeout
 		}).success(function(categories) {
 	        self.categories(categories);
 	        $("div[data-role='content'] ul").listview("refresh");

@@ -13,7 +13,7 @@
 		<script type="text/javascript" src="../js/jquery.lazy.load.js"></script>						
         <script type="text/javascript" src="../js/url.parser.js"></script>
 		<script type="text/javascript" src="../js/globalize.js"></script>
-		<script type="text/javascript" src="../js/cultures/globalize.culture.es.js"></script>
+		<script type="text/javascript" src="../js/cultures/globalize.culture.es.js"></script
 		<script type="text/javascript" src="../js/ga.js"></script>
         <script type="text/javascript" src="../js/binding-handlers.js"></script>
 		<script type="text/javascript" src="../js/homeViewModel.js"></script>
@@ -46,7 +46,7 @@
 			</div>
 			<div data-role="content" data-theme="c" >				
 				<input type="search" name="search-mini" id="search-mini" data-bind="value:searchstring, event : {change : searchposts}" data-mini="true" />
-				<div class="search-contents-margin" data-bind="visible : posts().length > 0">
+				<div class="generic-margin" data-bind="visible : posts().length > 0">
 							<h2 data-bind="jqmtext : messages.search_resultstitle + $root.searchstring()"></h2>
 							<ul data-role="listview" data-bind="foreach:posts">
 								<li>																	

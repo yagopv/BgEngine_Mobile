@@ -3,10 +3,7 @@
 
 /* Solve filter button position */
 .filter-list-margin { margin-top:7%; }
-.search-contents-margin { margin-top:3%; }
-.comments-margin{ margin-top:3%;}
-
-
+.generic-margin { margin-top:3%; }
 
 /* Remove ellipsis in home and postsby views to show all titles and description */
 .remove-ellipsis { text-overflow: ellipsis; overflow: visible; white-space: normal; }

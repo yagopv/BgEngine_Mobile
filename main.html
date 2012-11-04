@@ -14,6 +14,7 @@
 		<script type="text/javascript" src="js/url.parser.js"></script>
 		<script type="text/javascript" src="js/globalize.js"></script>
 		<script type="text/javascript" src="js/cultures/globalize.culture.es.js"></script>
+		<script type="text/javascript" src="js/ga.js"></script>
 		<script type="text/javascript" src="js/binding-handlers.js"></script>
 		<script type="text/javascript" src="js/homeViewModel.js"></script>
 		<script type="text/javascript" src="js/postViewModel.js"></script>
@@ -47,8 +48,10 @@
 						<a data-bind="attr : { href : 'views/post.html?postid='+ postid }" >									
 							<img data-role="bgm-list-image" data-bind="attr : { src : 'img/transparent.gif' , 'data-original' : Application.config.api_url + 'getthumbnail?url=' + thumbnailpath + '&width=70&height=70', alt : category }" />
 							<h5 class="remove-ellipsis" data-bind="text:title"></h5>
-							<p class="remove-ellipsis" data-bind="text:description"></p>				
-							<p><strong data-bind="text:date"></strong></p>									
+							<p class="remove-ellipsis" data-bind="text:description"></p>											
+							<div class="generic-margin">
+								<p><strong data-bind="text:date + $parent.getCommentsMessage(commentscount)"></strong></p>									
+							</div>
 						</a>				
 					</li>															
 				</ul>	

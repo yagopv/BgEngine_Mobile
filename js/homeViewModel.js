@@ -8,10 +8,20 @@
 	self.contentvisible = ko.observable(false);
 	self.messages = Globalize.culture(Application.appLanguage()).messages;
 
-	self.evaluatepending = function(a,b,c) {
+	self.evaluatepending = function() {
 		if (!self.pendingposts()) {
 			$(".loadmore").addClass("ui-disabled");
 		}
+	}
+	
+	self.getCommentsMessage = function(count) {
+	    if (count == 0) {
+		    return "";
+		} else if (count == 1){
+		    return " / 1 " + Globalize.localize("global_comment", Application.appLanguage());
+		} else {
+			return " / " + count + " " + Globalize.localize("global_comments", Application.appLanguage());
+		}		
 	}
 	
 	self.loadmore = function () {
@@ -19,7 +29,7 @@
 		$.ajax({
 			url : Application.config.api_url + "getposts?page=" + self.page + "&callback=?",
 			dataType : "jsonp",
-			timeout : 10000
+			timeout : Application.config.timeout
 		}).success(function(data) {
 	        $.map(data.posts, function (item) { self.homeposts.push(item) });
 			self.pendingposts(data.pendingposts);
@@ -32,12 +42,12 @@
 	        $.mobile.loading("hide");			
 		});		
 	}
-
+	
 	self.getalldata = function () {
 		$.ajax({
 			url : Application.config.api_url + "getposts?page=" + self.page + "&callback=?",
 			dataType : "jsonp",
-			timeout : 10000
+			timeout : Application.config.timeout
 		}).success(function(data) {
 	        self.homeposts(data.posts);
 			self.pendingposts(data.pendingposts);

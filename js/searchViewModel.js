@@ -14,7 +14,7 @@
 		$.ajax({
 			url : Application.config.api_url + "searchposts?searchstring="  + data.searchstring() + "&page="  + self.page + "&callback=?",
 			dataType : "jsonp",
-			timeout : 10000
+			timeout : Application.config.timeout
 		}).success(function(data) {
 	        $.map(data.posts, function (item) { self.posts.push(item) });	        
 			self.pendingposts(data.pendingposts);
@@ -35,7 +35,7 @@
 		$.ajax({
 			url : Application.config.api_url + "searchposts?searchstring="  + data.searchstring() + "&page="  + self.page + "&callback=?",
 			dataType : "jsonp",
-			timeout : 10000
+			timeout : Application.config.timeout
 		}).success(function(data) {
 			if (data.posts) {
 				self.posts(data.posts);

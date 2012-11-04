@@ -88,6 +88,8 @@ Globalize.addCultureInfo( "es", "default", {
 		"global_searchformore" : "Más",
 		"global_search" : "Buscar",				
 		"global_unable_connect" : "No ha sido posible establecer una conexion. Inténtalo más tarde",
+		"global_comment" : "comentario",
+		"global_comments" : "comentarios",
 		
 		"home_title": "Inicio",
 		"home_latest_posts": "Ultimos posts",
