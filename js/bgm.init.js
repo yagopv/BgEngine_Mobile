@@ -40,6 +40,15 @@ document.addEventListener("deviceready", onDeviceReady, false);
 function onDeviceReady() {
 	document.addEventListener("online", onOnline, false);
 	document.addEventListener("offline", onOffline, false);
+	document.addEventListener("backbutton", function(e){
+		if($.mobile.activePage.is('#home')){
+			e.preventDefault();
+			navigator.app.exitApp();
+		}
+		else {
+			navigator.app.backHistory()
+		}
+	}, false);	
 }
 
 function onOnline() {
