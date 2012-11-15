@@ -24,7 +24,9 @@
 			self.post(post);				
 			self.postcomments(post.comments);
 			self.contentvisible(true);	  
-			$.mobile.loading("hide");				
+			$.mobile.loading("hide");	
+			$("pre").addClass("prettyprint");
+			prettyPrint();			
 		}).error(function() {
 			$('<div id="my_toast" data-role="toast">' + Globalize.localize("global_unable_connect", Application.appLanguage()) + '</div>').appendTo($("body")).toast().toast("show");
 	        $.mobile.loading("hide");			
