@@ -30,8 +30,6 @@
 		    $(document).bind("mobileinit", function () {				
 		        $.mobile.defaultPageTransition = "none";				
 		        $.mobile.listview.prototype.options.filterPlaceholder = Globalize.localize("global_filteritems", Application.appLanguage());		        
-				$.mobile.page.prototype.options.backBtnText = Globalize.localize("global_backbuttontext", Application.appLanguage());		        
-				$.mobile.page.prototype.options.backBtnTheme = "b";
 		    });		
 		</script>		
 		<script type="text/javascript" src="js/jquery.mobile.js"></script>	
@@ -41,7 +39,18 @@
     </head>
 	<body>
 		<div id="home" data-role="page">
+			<div data-role="panel" id="leftmenu" data-theme="a" data-position="left" data-position-fixed="true" data-display="reveal">
+				<ul data-role="listview" data-theme="a" >						
+					<li data-role="list-divider" data-theme="a" style="height:27px;">Menu
+						<a data-icon="delete" data-theme="a" data-role="button" data-role="button" data-iconpos="notext"  data-inline="true" style="float:right; top:-6px;" data-rel="close"></a>
+					</li>
+					<li><a data-bind="text:messages.global_categories, attr : { href : 'views/categories.html' }"></a></li>							   
+					<li><a data-bind="text:messages.global_tags, attr : { href : 'views/tags.html' } " ></a></li>
+					<li><a data-bind="text:messages.global_search, attr : { href : 'views/search.html' } "></a></li>
+				</ul>
+			</div>						
 			<div data-role="header" data-theme="b" data-position="fixed">
+				<a href="#leftmenu" data-role="button" data-iconpos="notext"  data-inline="true" data-icon="th"></a>				
 				<h1 data-bind="text : messages.home_latest_posts"></h1>		
 			</div>
 			<div data-role="content" data-reset-content="true" data-theme="c" data-bind="visible : contentvisible" >
@@ -58,15 +67,6 @@
 					</li>															
 				</ul>	
 				<a href="#" class="loadmore" data-role="button" data-theme="b" data-bind="event : { tap:loadmore }, jqmtext : messages.global_loadmore, jqmbuttonenabled : pendingposts"></a>													
-			</div>
-			<div data-role="footer" data-theme="b" data-position="fixed">
-				<div data-role="navbar">
-					<ul>						
-						<li><a data-bind="jqmtext:messages.global_categories, attr : { href : 'views/categories.html' }" data-role="button"  data-icon="book"></a></li>							   
-						<li><a data-bind="jqmtext:messages.global_tags, attr : { href : 'views/tags.html' } " data-role="button"  data-icon="tags"></a></li>
-						<li><a data-bind="jqmtext:messages.global_search, attr : { href : 'views/search.html' } " data-role="button"  data-icon="fasearch" ></a></li>
-					</ul>
-				</div>				
 			</div>
 		</div>			
 	</body>

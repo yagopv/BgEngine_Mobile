@@ -5,8 +5,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 		<link href="../css/jquery.mobile.theme.css" rel="stylesheet" type="text/css" />		
 		<link href="../css/jquery.mobile.structure.css" rel="stylesheet" type="text/css" />		
-        <link href="../css/styles.css" rel="stylesheet" type="text/css" />			
-		<link rel="stylesheet" href="../css/jqm-icon-pack-2.1.2-fa.css" />
+        <link href="../css/styles.css" rel="stylesheet" type="text/css" />	
+		<link rel="stylesheet" href="../css/jqm-icon-pack-2.1.2-fa.css" />		
 		<link rel="stylesheet" href="../css/prettify.css" />
 		<script type="text/javascript" src="../js/jquery.js"></script>
 		<script type="text/javascript" src="../js/knockout-2.1.js"></script>
@@ -29,9 +29,7 @@
 			var Application =  new App();			
 		    $(document).bind("mobileinit", function () {				
 		        $.mobile.defaultPageTransition = "none";				
-		        $.mobile.listview.prototype.options.filterPlaceholder = Globalize.localize("global_filteritems", Application.appLanguage());		        
-				$.mobile.page.prototype.options.backBtnText = Globalize.localize("global_backbuttontext", Application.appLanguage());		        
-				$.mobile.page.prototype.options.backBtnTheme = "b";
+		        $.mobile.listview.prototype.options.filterPlaceholder = Globalize.localize("global_filteritems", Application.appLanguage());		        								
 		    });		
 		</script>		
 		<script type="text/javascript" src="../js/jquery.mobile.js"></script>	
@@ -40,10 +38,22 @@
         <script type="text/javascript" src="../js/bgm.toast.js"></script>
 	</head>
 	<body>
-		<div id="post" data-role="page" data-add-back-btn="true">
+		<div id="post" data-role="page">
+			<div data-role="panel" id="leftmenu" data-theme="a" data-position="left" data-position-fixed="true" data-display="reveal">
+				<ul data-role="listview" data-theme="a">						
+					<li data-role="list-divider" data-theme="a" style="height:27px;">Menu
+						<a data-icon="delete" data-theme="a" data-role="button" data-role="button" data-iconpos="notext"  data-inline="true" style="float:right; top:-6px;" data-rel="close"></a>
+					</li>
+					<li><a data-bind="text:$root.messages.global_categories, attr : { href : '../views/categories.html' }"></a></li>							   
+					<li><a data-bind="text:$root.messages.global_tags, attr : { href : '../views/tags.html' } " ></a></li>							   
+					<li><a data-bind="text:$root.messages.global_searchformore,  attr : { href : '../views/postsby.html?by=category&id='+ encodeURIComponent($root.category()) }" ></a></li>							   
+					<li><a data-bind="text:$root.messages.global_search, attr : { href : '../views/search.html' } " ></a></li>						
+				</ul>
+			</div>										
 			<div data-role="header" data-theme="b" data-position="fixed">
+				<a href="#leftmenu" data-role="button" data-iconpos="notext"  data-inline="true" data-icon="th"></a>	
 				<h1 data-bind="text : title"></h1>		
-				<a data-bind="attr : { href : '../main.html' }" data-role="button" data-icon="home" data-iconpos="notext" data-mini="true" data-inline="true" class="ui-btn-right"></a>				
+				<a data-bind="jqmtext : $root.messages.global_backbuttontext, attr : { href : '../main.html' }" data-icon="arrow-l" data-role="button" data-rel="back" data-inline="true" class="ui-btn-right"></a>
 			</div>
 			<div data-role="content" data-theme="c" data-bind="with : post, visible : contentvisible">                
 				<h3 class="ui-content ui-bar-a ui-corner-all" data-bind="text:title"></h3>
@@ -65,16 +75,6 @@
 						</div>
 					</div>
 				</div>
-			</div>
-			<div data-role="footer" data-theme="b" data-position="fixed">
-				<div data-role="navbar">
-					<ul>
-						<li><a data-bind="jqmtext:$root.messages.global_categories, attr : { href : '../views/categories.html' }" data-role="button"  data-icon="book"></a></li>							   
-						<li><a data-bind="jqmtext:$root.messages.global_tags, attr : { href : '../views/tags.html' } " data-role="button"  data-icon="tags"></a></li>							   
-						<li><a data-bind="jqmtext:$root.messages.global_searchformore,  attr : { href : '../views/postsby.html?by=category&id='+ encodeURIComponent($root.category()) }" data-role="button"  data-icon="plus"></a></li>							   
-						<li><a data-bind="jqmtext:$root.messages.global_search, attr : { href : '../views/search.html' } " data-role="button"  data-icon="fasearch"></a></li>						
-					</ul>
-				</div>				
 			</div>
 		</div>
 	</body>
