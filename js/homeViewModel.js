@@ -14,6 +14,22 @@
 		}
 	}
 	
+	self.openPanel = function() {
+		$("div[data-role='panel']").panel("open");
+	}
+	
+	self.closePanel = function() {
+		$("div['data-role=panel']").panel("close");	
+	}	
+	
+	self.openPanel = function() {
+		$("div[data-role='panel']").panel("open");
+	}
+	
+	self.closePanel = function() {
+		$("div['data-role=panel']").panel("close");	
+	}	
+	
 	self.getCommentsMessage = function(count) {
 	    if (count == 0) {
 		    return "";

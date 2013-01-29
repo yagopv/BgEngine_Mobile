@@ -2,7 +2,7 @@
 <widget xmlns = "http://www.w3.org/ns/widgets"
         xmlns:gap = "http://phonegap.com/ns/1.0"
         id        = "BgEngine_Mobile"
-        version   = "1.0.0">
+        version   = "1.1.0">
 
     <name>BgEngine Mobile</name>
 
@@ -23,6 +23,7 @@
 	<gap:splash src="splash/android/hdpi.png" gap:platform="android" gap:density="hdpi" />
 	<gap:splash src="splash/android/xhdpi.png" gap:platform="android" gap:density="xhdpi" />	
 
+	<gap:plugin name="Analytics" /> 
 	
 	<preference name="phonegap-version" value="2.0.0" />
 	<preference name="auto-hide-splash-screen" value="false" />

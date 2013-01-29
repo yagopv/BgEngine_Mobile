@@ -26,6 +26,14 @@
 		});	
 	}
 		
+	self.openPanel = function() {
+		$("div[data-role='panel']").panel("open");
+	}
+	
+	self.closePanel = function() {
+		$("div['data-role=panel']").panel("close");	
+	}	
+	
 	self.searchposts =  function(data, event) {		
 		$.mobile.loading("show");			
 		if (Application.lastsearchfilter != "" && Application.lastsearchfilter !=  data.searchstring()) {

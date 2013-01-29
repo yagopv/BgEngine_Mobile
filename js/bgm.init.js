@@ -35,7 +35,10 @@ $(document).live("pagebeforechange", function (event, data) {
 	$.mobile.pageData = $.url(data.toPage).param();
 });	
 
+var gaPlugin;
+
 document.addEventListener("deviceready", onDeviceReady, false);
+
 
 function onDeviceReady() {
 	document.addEventListener("online", onOnline, false);
@@ -44,11 +47,14 @@ function onDeviceReady() {
 		if($.mobile.activePage.is('#home')){
 			e.preventDefault();
 			navigator.app.exitApp();
+			gaPlugin.exit();
 		}
 		else {
 			navigator.app.backHistory()
 		}
 	}, false);	
+    gaPlugin = window.plugins.gaPlugin;
+    gaPlugin.init(successHandler, errorHandler, Application.google_analytics_code, 10);	
 }
 
 function onOnline() {
@@ -63,10 +69,6 @@ function showToast(message) {
     $('<div id="my_toast" data-role="toast">' + message + '</div>').appendTo($("body")).toast().toast("show");
 }
 
-if (Application.config.google_analytics_code != "") {
-  var _gaq = _gaq || [];
-  _gaq.push(['_setAccount', Application.config.google_analytics_code]);
-  _gaq.push(['_setDomainName', 'none']);
-  _gaq.push(['_trackPageview']);  
-}
+
+
 

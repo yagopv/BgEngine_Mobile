@@ -6,6 +6,14 @@
 	self.contentvisible = ko.observable(false);
 	self.messages = Globalize.culture(navigator.language.substr(0,2)).messages;
 
+	self.openPanel = function() {
+		$("div[data-role='panel']").panel("open");
+	}
+	
+	self.closePanel = function() {
+		$("div['data-role=panel']").panel("close");	
+	}	
+	
 	self.getalldata = function () {
 		$.ajax({
 			url : Application.config.api_url + "getcategories?callback=?",

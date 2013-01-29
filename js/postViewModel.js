@@ -13,6 +13,14 @@
 		$.mobile.pageData = $.url(document.location.href).param();
 	}
 
+	self.openPanel = function() {
+		$("div[data-role='panel']").panel("open");
+	}
+	
+	self.closePanel = function() {
+		$("div['data-role=panel']").panel("close");	
+	}	
+	
 	self.getalldata = function () {      
 		$.ajax({
 			url : Application.config.api_url + "getpost?postid=" + $.mobile.pageData.postid + "&callback=?",

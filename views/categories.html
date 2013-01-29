@@ -14,8 +14,7 @@
 		<script type="text/javascript" src="../js/jquery.lazy.load.js"></script>						
         <script type="text/javascript" src="../js/url.parser.js"></script>
 		<script type="text/javascript" src="../js/globalize.js"></script>
-		<script type="text/javascript" src="../js/cultures/globalize.culture.es.js"></script>
-		<script type="text/javascript" src="../js/ga.js"></script>
+		<script type="text/javascript" src="../js/cultures/globalize.culture.es.js"></script>		
 		<script type="text/javascript" src="../js/prettify.js"></script>
         <script type="text/javascript" src="../js/binding-handlers.js"></script>
 		<script type="text/javascript" src="../js/homeViewModel.js"></script>
@@ -34,18 +33,16 @@
 		</script>		
 		<script type="text/javascript" src="../js/jquery.mobile.js"></script>	
         <script src="../phonegap.js"></script>
+		<script src="../GAPlugin.js"></script>		
         <script type="text/javascript" src="../js/bgm.app.js"></script>
 		<script type="text/javascript" src="../js/bgm.init.js"></script>
         <script type="text/javascript" src="../js/bgm.toast.js"></script>
 	</head>
 	<body>
-		<div id="categories" data-role="page" data-add-back-btn="true">
-			<div data-role="panel" id="leftmenu" data-theme="a" data-position="left" data-position-fixed="true" data-display="reveal">
-				<ul data-role="listview" data-theme="a">						
-					<li data-role="list-divider" data-theme="a" style="height:27px;">Menu
-						<a data-icon="delete" data-theme="a" data-role="button" data-role="button" data-iconpos="notext"  data-inline="true" style="float:right; top:-6px;" data-rel="close"></a>
-					</li>
-					<li><a data-bind="text:messages.global_home, attr : { href : '../main.html' } " ></a></li>							   
+		<div id="categories" data-role="page" data-add-back-btn="true" data-bind="event : { swipeleft : closePanel, swiperight : openPanel }">
+			<div data-role="panel" id="leftmenu" data-theme="b" data-position="left" data-position-fixed="true" data-display="reveal">
+				<ul data-role="listview" data-theme="d" data-inset="true">						
+					<li data-role="list-divider">Menu</li>					
 					<li><a data-bind="text:messages.global_tags, attr : { href : '../views/tags.html' } " ></a></li>							   
 					<li><a data-bind="text:messages.global_search, attr : { href : '../views/search.html' } " ></a></li>						
 				</ul>
@@ -64,14 +61,6 @@
 						</a>				
 					</li>															
 				</ul>					
-			</div>
-			<div data-role="footer" data-theme="b" data-position="fixed">
-				<div data-role="navbar">
-					<ul>
-						<li><a data-bind="jqmtext:messages.global_tags, attr : { href : '../views/tags.html' } " data-role="button"  data-icon="tags"></a></li>							   
-						<li><a data-bind="jqmtext:messages.global_search, attr : { href : '../views/search.html' } " data-role="button"  data-icon="fasearch"></a></li>						
-					</ul>
-				</div>				
 			</div>
 		</div>
 	</body>
