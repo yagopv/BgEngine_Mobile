@@ -33,15 +33,14 @@
 		</script>		
 		<script type="text/javascript" src="js/jquery.mobile.js"></script>	
         <script src="phonegap.js"></script>		
-		<script src="../GAPlugin.js"></script>		
+		<script src="GAPlugin.js"></script>		
         <script type="text/javascript" src="js/bgm.init.js"></script>	
         <script type="text/javascript" src="js/bgm.toast.js"></script>
     </head>
 	<body>
 		<div id="home" data-role="page" data-bind="event : { swipeleft : closePanel, swiperight : openPanel }">
 			<div data-role="panel" id="leftmenu" data-theme="b" data-position="left" data-position-fixed="true" data-display="reveal">
-				<ul data-role="listview" data-theme="d" data-inset="true">						
-					<li data-role="list-divider">Menu</li>					
+				<ul data-role="listview" data-theme="d" data-inset="true">										
 					<li><a data-bind="text:messages.global_categories, attr : { href : 'views/categories.html' }"></a></li>							   
 					<li><a data-bind="text:messages.global_tags, attr : { href : 'views/tags.html' } " ></a></li>
 					<li><a data-bind="text:messages.global_search, attr : { href : 'views/search.html' } "></a></li>

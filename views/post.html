@@ -41,7 +41,6 @@
 		<div id="post" data-role="page" data-bind="event : { swipeleft : closePanel, swiperight : openPanel }">
 			<div data-role="panel" id="leftmenu" data-theme="b" data-position="left" data-position-fixed="true" data-display="reveal">
 				<ul data-role="listview" data-theme="d" data-inset="true">						
-					<li data-role="list-divider">Menu</li>					
 					<li><a data-bind="text:$root.messages.global_tags, attr : { href : '../views/tags.html' } " ></a></li>							   
 					<li><a data-bind="text:$root.messages.global_searchformore,  attr : { href : '../views/postsby.html?by=category&id='+ encodeURIComponent($root.category()) }" ></a></li>							   
 					<li><a data-bind="text:$root.messages.global_search, attr : { href : '../views/search.html' } " ></a></li>						
