@@ -23,7 +23,7 @@
 	<gap:splash src="splash/android/hdpi.png" gap:platform="android" gap:density="hdpi" />
 	<gap:splash src="splash/android/xhdpi.png" gap:platform="android" gap:density="xhdpi" />	
 
-	<gap:plugin name="Analytics" /> 
+	<gap:plugin name="GAPlugin" /> 
 	
 	<preference name="phonegap-version" value="2.0.0" />
 	<preference name="auto-hide-splash-screen" value="false" />
